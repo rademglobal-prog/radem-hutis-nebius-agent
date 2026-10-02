@@ -28,7 +28,7 @@ Measurement / Follow-up
 
 The hackathon extension uses the **OpenAI-compatible Nebius Token Factory inference API** as the model gateway and is designed to use an **NVIDIA Nemotron open model** for reasoning over structured HUTIS readiness context.
 
-The exact Nemotron variant is configured at runtime with `NEMOTRON_MODEL`. This avoids hard-coding a model before live benchmark testing.
+The current first-pass candidate is `nvidia/Nemotron-3_5-Lightning`, while `NEMOTRON_MODEL` remains configurable so additional Nemotron variants can be benchmarked without changing application code.
 
 ## Authentication and credential handling
 
@@ -84,7 +84,7 @@ Copy `.env.example` to `.env` and add your own Nebius Token Factory key.
 ```env
 NEBIUS_API_KEY=your_key_here
 NEBIUS_BASE_URL=https://api.tokenfactory.nebius.com/v1/
-NEMOTRON_MODEL=your_available_nemotron_model_id
+NEMOTRON_MODEL=nvidia/Nemotron-3_5-Lightning
 ```
 
 Never commit `.env`.
